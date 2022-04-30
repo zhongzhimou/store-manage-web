@@ -1,0 +1,43 @@
+.page-enter-active,
+.page-leave-active {
+  transition: all 1s;
+}
+.page-enter {
+  opacity: 0;
+  transform: translateX(100vh);
+}
+.page-leave-active {
+  opacity: 0;
+  transform: translateX(-100vh);
+}
+
+// slide-forward：前进（页面过渡效果，从右到左）
+// v-enter 定义进入过渡的开始状态。在元素被插入之前生效，在元素被插入之后的下一帧移除。
+.slide-forward-enter {
+  transform: translateX(100%);
+}
+
+// v-enter-active 定义进入过渡生效时的状态。在整个进入过渡的阶段中应用，在元素被插入之前生效，在过渡/动画完成之后移除。这个类可以被用来定义进入过渡的过程时间，延迟和曲线函数。
+.slide-forward-enter-active {
+  will-change: transform;
+  transition: transform 0.5s ease-in-out;
+}
+
+// v-enter-to: 2.1.8版及以上 定义进入过渡的结束状态。在元素被插入之后下一帧生效 (与此同时 v-enter 被移除)，在过渡/动画完成之后移除。
+.slide-forward-enter-to {
+  transform: translateX(0);
+}
+
+// slide-back：后退（页面过渡效果，从左到右）
+.slide-back-enter {
+  transform: translateX(-100%);
+}
+
+.slide-back-enter-active {
+  will-change: transform;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-back-enter-to {
+  transform: translateX(0);
+}
